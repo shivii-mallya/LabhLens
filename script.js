@@ -166,6 +166,12 @@ document.addEventListener("DOMContentLoaded", function() {
                     );
                 }
 
+                if (scheme.eligibility.incomeBands) {
+                    reasons.push(
+                        "Your household income falls within the applicable income range."
+                    );
+                }
+
                 card.innerHTML = `
                     <h3>${scheme.name}</h3>
                     <p>${scheme.benefit}</p>
@@ -383,7 +389,7 @@ document
                     payments or submitting personal information.
 
                     <br><br>
-                    
+
                     <strong>Note:</strong>
                     LabhLens provides a screening based on common warning signs.
                     It does not confirm that a message is definitely a scam or safe.
