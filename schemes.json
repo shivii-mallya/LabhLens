@@ -1,0 +1,57 @@
+[
+  {
+    "id": "pm-kisan",
+    "name": "PM-KISAN",
+    "benefit": "Eligible farmer families can receive ₹6,000 per year through direct benefit transfer.",
+    "benefitAmount": 6000,
+    "frequency": "yearly",
+    "eligibility": {
+      "occupation": ["farmer"]
+    },
+    "documents": [
+      "Aadhaar card",
+      "Land ownership/land record details",
+      "Bank account details"
+    ],
+    "howToApply": "Apply through the official PM-KISAN portal or through the appropriate government agriculture authorities.",
+    "officialWebsite": "https://pmkisan.gov.in/"
+  },
+  {
+    "id": "pmuy",
+    "name": "Pradhan Mantri Ujjwala Yojana",
+    "benefit": "Provides eligible households support for obtaining an LPG connection.",
+    "benefitAmount": 0,
+    "frequency": "one-time",
+    "eligibility": {
+      "gender": ["female"],
+      "category": ["eligible-low-income-household"]
+    },
+    "documents": [
+      "Aadhaar card",
+      "Address proof",
+      "Bank account details",
+      "Household/ration card details where applicable"
+    ],
+    "howToApply": "Apply through an authorized LPG distributor or the official PMUY process.",
+    "officialWebsite": "https://www.pmuy.gov.in/"
+  },
+  {
+    "id": "scholarship-students",
+    "name": "Central Sector Scheme of Scholarship for College and University Students",
+    "benefit": "Financial assistance is provided to eligible meritorious students pursuing higher education.",
+    "benefitAmount": 10000,
+    "frequency": "yearly",
+    "eligibility": {
+      "occupation": ["student"],
+      "maxAge": 25
+    },
+    "documents": [
+      "Aadhaar card",
+      "Educational certificates",
+      "Income certificate",
+      "Bank account details"
+    ],
+    "howToApply": "Applications are generally submitted through the National Scholarship Portal when the application window is open.",
+    "officialWebsite": "https://scholarships.gov.in/"
+  }
+]
