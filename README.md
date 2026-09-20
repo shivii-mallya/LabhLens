@@ -125,6 +125,7 @@ Rule-Based Scam Detection
   |
   v
 Safety Guidance
+```
 
 ## Technology Stack
 HTML5 — application structure
