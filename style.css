@@ -1,0 +1,407 @@
+/* ---------- Base ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f9fc;
+    color: #172033;
+    line-height: 1.6;
+}
+
+
+/* ---------- Navigation ---------- */
+
+.navbar {
+    width: 100%;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-bottom: 1px solid #e6e9ef;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #172033;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 28px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #4b5563;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.navbar a:hover {
+    color: #2563eb;
+}
+
+
+/* ---------- Hero ---------- */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    padding: 80px 7%;
+    background: linear-gradient(135deg, #eef5ff 0%, #f8fbff 55%, #ffffff 100%);
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+.eyebrow {
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(44px, 6vw, 76px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 28px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #2563eb;
+}
+
+.hero-description {
+    max-width: 650px;
+    font-size: 19px;
+    color: #5b6474;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.primary-button {
+    background: #2563eb;
+    color: white;
+}
+
+.primary-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.secondary-button {
+    background: white;
+    color: #2563eb;
+    border: 1px solid #cbd5e1;
+}
+
+.secondary-button:hover {
+    border-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+
+/* ---------- Sections ---------- */
+
+.section {
+    padding: 100px 7%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    font-size: 42px;
+    line-height: 1.15;
+    margin-bottom: 15px;
+}
+
+.section-heading p:last-child {
+    color: #667085;
+    font-size: 17px;
+}
+
+
+/* ---------- Cards ---------- */
+
+.form-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 40px;
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.06);
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    text-align: center;
+    padding: 35px 20px;
+    background: #172033;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 16px 5%;
+    }
+
+    .navbar nav {
+        gap: 12px;
+    }
+
+    .navbar a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 600px;
+        padding: 60px 5%;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 17px;
+    }
+
+    .section {
+        padding: 70px 5%;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .form-card {
+        padding: 25px;
+    }
+}
+/* ---------- App Views ---------- */
+
+.hidden {
+    display: none;
+}
+
+
+/* ---------- Navigation Buttons ---------- */
+
+.navbar .logo {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 12px;
+}
+
+.navbar nav button {
+    border: 1px solid #dbe5f5;
+    background: #f3f7ff;
+    cursor: pointer;
+    color: #2563eb;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 10px 16px;
+    border-radius: 9px;
+    transition: 0.2s ease;
+}
+
+.navbar nav button:hover {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+    transform: translateY(-1px);
+}
+
+/* ---------- Feature Cards ---------- */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.05);
+}
+
+.feature-number {
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #667085;
+}
+
+
+/* ---------- Form Placeholder ---------- */
+
+.form-placeholder {
+    margin-top: 10px;
+    color: #667085;
+}
+
+
+/* ---------- Mobile Feature Cards ---------- */
+
+@media (max-width: 700px) {
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* ---------- Eligibility Form ---------- */
+
+.form-header {
+    margin-bottom: 30px;
+}
+
+.form-header h3 {
+    font-size: 25px;
+    margin-bottom: 6px;
+}
+
+.form-header p {
+    color: #667085;
+}
+
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #344054;
+}
+
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d0d5dd;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #172033;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+.form-submit {
+    margin-top: 30px;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+.form-submit:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+
+@media (max-width: 700px) {
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
