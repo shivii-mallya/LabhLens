@@ -207,3 +207,183 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
 });
+document
+    .getElementById("check-scam-btn")
+    .addEventListener("click", function() {
+
+        let message = document
+            .getElementById("scam-message")
+            .value
+            .toLowerCase();
+
+        let result = document.getElementById("scam-result");
+
+        if (message.trim() === "") {
+
+            result.innerHTML = `
+                <div class="scam-result warning">
+                    <h3>Please enter a message</h3>
+                    <p>Paste the suspicious message above to check it.</p>
+                </div>
+            `;
+
+            result.classList.remove("hidden");
+            return;
+        }
+
+        let warningSigns = [];
+
+        // Asking for OTP or password
+        if (
+            message.includes("otp") ||
+            message.includes("one time password") ||
+            message.includes("password") ||
+            message.includes("pin")
+        ) {
+            warningSigns.push(
+                "The message asks for sensitive information such as an OTP, password or PIN."
+            );
+        }
+
+        // Asking for money
+        if (
+            message.includes("pay") ||
+            message.includes("payment") ||
+            message.includes("send money") ||
+            message.includes("transfer") ||
+            message.includes("fee") ||
+            message.includes("processing charge")
+        ) {
+            warningSigns.push(
+                "The message asks you to make a payment or transfer money."
+            );
+        }
+
+        // Urgency
+        if (
+            message.includes("urgent") ||
+            message.includes("immediately") ||
+            message.includes("act now") ||
+            message.includes("within 24 hours") ||
+            message.includes("account will be blocked") ||
+            message.includes("account will be closed")
+        ) {
+            warningSigns.push(
+                "The message uses urgent or threatening language to pressure you."
+            );
+        }
+
+        // Suspicious links
+        // Suspicious links
+        let links = message.match(/https?:\/\/[^\s]+/g);
+
+        if (links) {
+
+            let suspiciousLink = false;
+
+            links.forEach(function(link) {
+
+                try {
+                    let url = new URL(link);
+                    let hostname = url.hostname;
+
+                    if (
+                        !hostname.endsWith(".gov.in") &&
+                        hostname !== "gov.in"
+                    ) {
+                        suspiciousLink = true;
+                    }
+
+                } catch (error) {
+                    suspiciousLink = true;
+                }
+
+            });
+
+            if (suspiciousLink) {
+                warningSigns.push(
+                    "The message contains a link that is not from an official .gov.in government domain."
+                );
+                }
+            }   
+        // Unrealistic promises
+        if (
+            message.includes("you won") ||
+            message.includes("you have won") ||
+            message.includes("free money") ||
+            message.includes("guaranteed cash") ||
+            message.includes("claim your prize") ||
+            message.includes("lucky winner")
+        ) {
+            warningSigns.push(
+                "The message makes an unrealistic prize, reward or money promise."
+            );
+        }
+
+        // Government impersonation
+        if (
+            message.includes("government scheme") ||
+            message.includes("government grant") ||
+            message.includes("pm scheme") ||
+            message.includes("ministry") ||
+            message.includes("aadhaar update")
+        ) {
+            warningSigns.push(
+                "The message uses government-related claims that should be verified through an official government website."
+            );
+        }
+
+        let verdict;
+        let resultClass;
+
+        if (warningSigns.length >= 3) {
+
+            verdict = "High Scam Risk";
+            resultClass = "danger";
+
+        } else if (warningSigns.length >= 1) {
+
+            verdict = "Needs Verification";
+            resultClass = "warning";
+
+        } else {
+
+            verdict = "No Obvious Red Flags";
+            resultClass = "safe";
+        }
+
+        result.innerHTML = `
+            <div class="scam-result ${resultClass}">
+                <h3>${verdict}</h3>
+
+                <p>
+                    ${
+                        warningSigns.length > 0
+                        ? "We found the following warning signs:"
+                        : "We did not detect the common warning signs checked by LabhLens."
+                    }
+                </p>
+
+                ${
+                    warningSigns.length > 0
+                    ? `
+                        <ul>
+                            ${warningSigns.map(function(sign) {
+                                return `<li>${sign}</li>`;
+                            }).join("")}
+                        </ul>
+                    `
+                    : ""
+                }
+
+                <div class="scam-advice">
+                    <strong>Safety reminder:</strong>
+                    Never share OTPs, passwords or PINs, and verify
+                    government schemes through official government websites
+                    before making payments or submitting personal information.
+                </div>
+            </div>
+        `;
+
+        result.classList.remove("hidden");
+    });

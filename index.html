@@ -611,39 +611,30 @@
         <!-- SCAM CHECKER VIEW                                 -->
         <!-- ================================================= -->
 
-        <section id="scam-view" class="app-view hidden">
-
-            <section class="section">
-
-                <div class="section-heading">
-
-                    <p class="eyebrow">
-                        02 — SCAM CHECKER
-                    </p>
-
-                    <h2>
-                        Received a scheme message?
-                    </h2>
-
+        <div id="scam-view" class="app-view hidden">
+            <div class="scam-container">
+                <div class="scam-header">
+                    <h2>Check a Suspicious Message</h2>
                     <p>
-                        Paste an SMS or WhatsApp message and check for
-                        common warning signs.
+                        Paste an SMS, WhatsApp message, or social media message
+                        to check for common scam warning signs.
                     </p>
-
                 </div>
 
+                <textarea
+                    id="scam-message"
+                    placeholder="Paste the suspicious message here..."
+                    rows="8"
+                ></textarea>
 
-                <div class="form-card">
+                <button id="check-scam-btn" class="primary-btn">
+                    Check Message →
+                </button>
 
-                    <h3>
-                        Message checker
-                    </h3>
+                <div id="scam-result" class="hidden"></div>
 
-                    <p class="form-placeholder">
-                        The scam checker will appear here.
-                    </p>
-
-                </div>
+            </div>
+        </div>
 
             </section>
 
@@ -658,7 +649,7 @@
     <footer>
 
         <p>
-            LabhLens · Built for HACKDAY 1.0
+                                                                 · LabhLens · 
         </p>
 
     </footer>
