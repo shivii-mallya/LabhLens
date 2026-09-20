@@ -377,10 +377,16 @@ document
                 }
 
                 <div class="scam-advice">
-                    <strong>Safety reminder:</strong>
-                    Never share OTPs, passwords or PINs, and verify
-                    government schemes through official government websites
-                    before making payments or submitting personal information.
+                   <strong>Safety reminder:</strong>
+                    Never share OTPs, passwords or PINs. Verify government
+                    schemes through official government websites before making
+                    payments or submitting personal information.
+
+                    <br><br>
+                    
+                    <strong>Note:</strong>
+                    LabhLens provides a screening based on common warning signs.
+                    It does not confirm that a message is definitely a scam or safe.
                 </div>
             </div>
         `;
