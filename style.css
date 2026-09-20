@@ -573,3 +573,20 @@ footer {
         text-align: center;
     }
 }
+.benefit-summary.hidden {
+    display: none;
+}
+.verification-note {
+    margin: 16px 0;
+    padding: 12px 14px;
+    background: #fff8e7;
+    border: 1px solid #f3dfaa;
+    border-radius: 10px;
+    color: #6b5a2b;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.verification-note strong {
+    color: #5a481c;
+}

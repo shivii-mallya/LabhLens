@@ -65,6 +65,14 @@ function findMatchingSchemes(user) {
             }
         }
 
+        // Check income
+        if (scheme.eligibility.incomeBands) {
+
+            if (!scheme.eligibility.incomeBands.includes(user.income)) {
+                isMatch = false;
+            }
+        }
+
         // If all conditions matched, add the scheme
         if (isMatch) {
             matches.push(scheme);
@@ -107,13 +115,17 @@ document.addEventListener("DOMContentLoaded", function() {
             let benefitSummary = document.getElementById("benefit-summary");
 
             if (totalBenefit > 0) {
-                benefitSummary.innerHTML = `
-                    <span>Potential benefits you may be eligible for</span>
-                    <strong>₹${totalBenefit.toLocaleString("en-IN")} / year</strong>
-                `;
-            } else {
-                benefitSummary.innerHTML = "";
-            }
+                    benefitSummary.innerHTML = `
+                        <span>Potential benefits you may be eligible for</span>
+                        <strong>₹${totalBenefit.toLocaleString("en-IN")} / year</strong>
+                    `;
+                    benefitSummary.classList.remove("hidden");
+
+            } 
+            else {
+                    benefitSummary.innerHTML = "";
+                    benefitSummary.classList.add("hidden");
+                }
 
             let resultsSection = document.getElementById("results-section");
             let resultsContainer = document.getElementById("results-container");
@@ -176,6 +188,11 @@ document.addEventListener("DOMContentLoaded", function() {
                         <strong>How to apply:</strong>
                         ${scheme.howToApply}
                     </p>
+
+                    <div class="verification-note">
+                        <strong>Important:</strong>
+                        ${scheme.verificationNote}
+                    </div>
 
                     <a href="${scheme.officialWebsite}" target="_blank">
                         Visit Official Website →

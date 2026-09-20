@@ -2,7 +2,7 @@
   {
     "id": "pm-kisan",
     "name": "PM-KISAN",
-    "benefit": "Eligible farmer families can receive ₹6,000 per year through direct benefit transfer.",
+    "benefit": "Eligible landholding farmer families receive ₹6,000 per year through Direct Benefit Transfer in three equal installments.",
     "benefitAmount": 6000,
     "frequency": "yearly",
     "eligibility": {
@@ -10,40 +10,42 @@
     },
     "documents": [
       "Aadhaar card",
-      "Land ownership/land record details",
+      "Land ownership / land record details",
       "Bank account details"
     ],
-    "howToApply": "Apply through the official PM-KISAN portal or through the appropriate government agriculture authorities.",
-    "officialWebsite": "https://pmkisan.gov.in/"
+    "howToApply": "Register through the official PM-KISAN portal or through the appropriate government agriculture authorities.",
+    "officialWebsite": "https://pmkisan.gov.in/",
+    "verificationNote": "Final eligibility depends on landholding status, government exclusion criteria and verification by the concerned authorities."
   },
   {
     "id": "pmuy",
     "name": "Pradhan Mantri Ujjwala Yojana",
-    "benefit": "Provides eligible households support for obtaining an LPG connection.",
+    "benefit": "Eligible women from poor households can receive support for obtaining an LPG connection.",
     "benefitAmount": 0,
     "frequency": "one-time",
     "eligibility": {
-    "gender": ["female"],
-    "minAge": 18
-    },  
+      "gender": ["female"],
+      "minAge": 18
+    },
     "documents": [
       "Aadhaar card",
       "Address proof",
       "Bank account details",
-      "Household/ration card details where applicable"
+      "Household / ration card details where applicable"
     ],
     "howToApply": "Apply through an authorized LPG distributor or the official PMUY process.",
-    "officialWebsite": "https://www.pmuy.gov.in/"
+    "officialWebsite": "https://www.pmuy.gov.in/",
+    "verificationNote": "The applicant must meet the scheme's household and LPG-connection conditions."
   },
   {
-    "id": "scholarship-students",
+    "id": "csss",
     "name": "Central Sector Scheme of Scholarship for College and University Students",
     "benefit": "Financial assistance is provided to eligible meritorious students pursuing higher education.",
-    "benefitAmount": 10000,
+    "benefitAmount": 0,
     "frequency": "yearly",
     "eligibility": {
       "occupation": ["student"],
-      "maxAge": 25
+      "incomeBands": ["below-1l", "1-2.5l"]
     },
     "documents": [
       "Aadhaar card",
@@ -51,7 +53,154 @@
       "Income certificate",
       "Bank account details"
     ],
-    "howToApply": "Applications are generally submitted through the National Scholarship Portal when the application window is open.",
-    "officialWebsite": "https://scholarships.gov.in/"
+    "howToApply": "Applications are submitted through the National Scholarship Portal when the application window is open.",
+    "officialWebsite": "https://scholarships.gov.in/",
+    "verificationNote": "Fresh applicants must satisfy academic merit, family-income and other scholarship conditions specified by the scheme."
+  },
+  {
+    "id": "pmay-u-2",
+    "name": "Pradhan Mantri Awas Yojana – Urban 2.0",
+    "benefit": "Eligible urban households can receive housing assistance through applicable PMAY-U 2.0 verticals.",
+    "benefitAmount": 0,
+    "frequency": "scheme-dependent",
+    "eligibility": {
+      "incomeBands": ["below-1l"]
+    },
+    "documents": [
+      "Aadhaar card",
+      "Income certificate",
+      "Address proof",
+      "Property / housing documents where applicable"
+    ],
+    "howToApply": "Apply through the official PMAY-U 2.0 portal or the relevant urban local authority.",
+    "officialWebsite": "https://pmaymis.gov.in/pmaymis2_2024/PmayDefault.aspx",
+    "verificationNote": "Eligibility also depends on urban residence, house ownership and the specific PMAY-U 2.0 component."
+  },
+  {
+    "id": "pmjdy",
+    "name": "Pradhan Mantri Jan-Dhan Yojana",
+    "benefit": "Provides access to basic banking services including a savings account, RuPay debit card and eligible overdraft facilities.",
+    "benefitAmount": 0,
+    "frequency": "ongoing",
+    "eligibility": {
+      "minAge": 10
+    },
+    "documents": [
+      "Aadhaar card or accepted identity document",
+      "Address proof where required"
+    ],
+    "howToApply": "Open a basic savings bank deposit account through a participating bank branch or Business Correspondent (Bank Mitra).",
+    "officialWebsite": "https://pmjdy.gov.in/scheme",
+    "verificationNote": "PMJDY is intended for persons who do not already have another bank account."
+  },
+  {
+    "id": "pmsby",
+    "name": "Pradhan Mantri Suraksha Bima Yojana",
+    "benefit": "Provides renewable accident insurance cover, including ₹2 lakh for accidental death or permanent total disability and ₹1 lakh for specified partial disability.",
+    "benefitAmount": 0,
+    "frequency": "yearly",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 70
+    },
+    "documents": [
+      "Bank or post office account details",
+      "Aadhaar / KYC details where required"
+    ],
+    "howToApply": "Enroll through a participating bank or post office with the required account and auto-debit consent.",
+    "officialWebsite": "https://financialservices.gov.in/pmsby",
+    "verificationNote": "An eligible bank or post office account is required for enrollment."
+  },
+  {
+    "id": "pmjjby",
+    "name": "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+    "benefit": "Provides renewable life insurance cover of ₹2 lakh for death due to any reason, subject to scheme terms.",
+    "benefitAmount": 0,
+    "frequency": "yearly",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 50
+    },
+    "documents": [
+      "Bank or post office account details",
+      "Aadhaar / KYC details where required"
+    ],
+    "howToApply": "Enroll through a participating bank or post office with the required account and auto-debit consent.",
+    "officialWebsite": "https://financialservices.gov.in/pmjjby",
+    "verificationNote": "A participating bank or post office account is required and the scheme operates subject to its terms and conditions."
+  },
+  {
+    "id": "apy",
+    "name": "Atal Pension Yojana",
+    "benefit": "A government-backed pension scheme for eligible subscribers, with pension options beginning at ₹1,000 per month and going up to ₹5,000 per month at age 60 depending on the selected contribution plan.",
+    "benefitAmount": 0,
+    "frequency": "pension",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 40
+    },
+    "documents": [
+      "Savings bank or post office account details",
+      "Aadhaar / KYC details where required"
+    ],
+    "howToApply": "Enroll through a participating bank or post office.",
+    "officialWebsite": "https://pfrda.org.in/web/pfrda/schemes/atal-pension-yojana-apy",
+    "verificationNote": "New subscribers who are or have been income-tax payers are not eligible under the current APY rules."
+  },
+  {
+    "id": "pmfby",
+    "name": "Pradhan Mantri Fasal Bima Yojana",
+    "benefit": "Provides crop insurance coverage to eligible farmers for notified crops and notified areas, subject to scheme conditions.",
+    "benefitAmount": 0,
+    "frequency": "crop-season",
+    "eligibility": {
+      "occupation": ["farmer"]
+    },
+    "documents": [
+      "Aadhaar card",
+      "Land records or cultivation documents",
+      "Bank account details",
+      "Required crop / sowing documents"
+    ],
+    "howToApply": "Apply through the official PMFBY portal, participating channels or the applicable crop insurance process.",
+    "officialWebsite": "https://pmfby.gov.in/",
+    "verificationNote": "Coverage depends on the notified crop, notified area, insurable interest and applicable enrollment conditions."
+  },
+  {
+    "id": "pm-svanidhi",
+    "name": "PM Street Vendor's AtmaNirbhar Nidhi (PM SVANidhi)",
+    "benefit": "Provides working-capital support and other incentives to eligible street vendors.",
+    "benefitAmount": 0,
+    "frequency": "scheme-dependent",
+    "eligibility": {
+      "occupation": ["street-vendor"]
+    },
+    "documents": [
+      "Street-vendor identification / certificate where applicable",
+      "Aadhaar card",
+      "Bank account details"
+    ],
+    "howToApply": "Apply through the official PM SVANidhi process or participating lending institutions / urban local bodies.",
+    "officialWebsite": "https://pmsvanidhi.mohua.gov.in/",
+    "verificationNote": "Final eligibility depends on street-vendor identification and the applicable PM SVANidhi guidelines."
+  },
+  {
+    "id": "pm-vishwakarma",
+    "name": "PM Vishwakarma",
+    "benefit": "Provides support to eligible traditional artisans and craftspeople, including recognition, skill training, toolkit support, credit support and marketing assistance.",
+    "benefitAmount": 0,
+    "frequency": "scheme-dependent",
+    "eligibility": {
+      "occupation": ["artisan"],
+      "minAge": 18
+    },
+    "documents": [
+      "Aadhaar card",
+      "Bank account details",
+      "Identity / registration details required under the scheme"
+    ],
+    "howToApply": "Apply through the official PM Vishwakarma registration process, generally with assistance through the designated Common Service Centre process.",
+    "officialWebsite": "https://pmvishwakarma.gov.in/",
+    "verificationNote": "The applicant must work in one of the notified traditional trades and satisfy the scheme's other conditions."
   }
 ]
