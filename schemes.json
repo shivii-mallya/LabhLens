@@ -23,9 +23,9 @@
     "benefitAmount": 0,
     "frequency": "one-time",
     "eligibility": {
-      "gender": ["female"],
-      "category": ["eligible-low-income-household"]
-    },
+    "gender": ["female"],
+    "minAge": 18
+    },  
     "documents": [
       "Aadhaar card",
       "Address proof",

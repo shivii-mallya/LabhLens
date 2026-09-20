@@ -51,6 +51,19 @@ function findMatchingSchemes(user) {
                 isMatch = false;
             }
         }
+        // Check minimum age
+        if (scheme.eligibility.minAge) {
+            if (user.age < scheme.eligibility.minAge) {
+                isMatch = false;
+            }
+        }
+
+        // Check gender
+        if (scheme.eligibility.gender) {
+            if (!scheme.eligibility.gender.includes(user.gender)) {
+                isMatch = false;
+            }
+        }
 
         // If all conditions matched, add the scheme
         if (isMatch) {
@@ -83,6 +96,24 @@ document.addEventListener("DOMContentLoaded", function() {
             let matches = findMatchingSchemes(user);
 
             console.log("Matching schemes:", matches);
+            let totalBenefit = 0;
+
+            matches.forEach(function(scheme) {
+                if (scheme.benefitAmount) {
+                    totalBenefit += scheme.benefitAmount;
+                }
+            });
+
+            let benefitSummary = document.getElementById("benefit-summary");
+
+            if (totalBenefit > 0) {
+                benefitSummary.innerHTML = `
+                    <span>Potential benefits you may be eligible for</span>
+                    <strong>₹${totalBenefit.toLocaleString("en-IN")} / year</strong>
+                `;
+            } else {
+                benefitSummary.innerHTML = "";
+            }
 
             let resultsSection = document.getElementById("results-section");
             let resultsContainer = document.getElementById("results-container");
@@ -94,10 +125,47 @@ document.addEventListener("DOMContentLoaded", function() {
                 let card = document.createElement("div");
 
                 card.className = "scheme-card";
+                let reasons = [];
+
+                if (scheme.eligibility.occupation) {
+                    reasons.push(
+                        "Your occupation matches: " + user.occupation
+                    );
+                }
+
+                if (scheme.eligibility.maxAge) {
+                    reasons.push(
+                        "Your age (" + user.age +
+                        ") is within the age limit of " +
+                        scheme.eligibility.maxAge + "."
+                    );
+                }
+
+                if (scheme.eligibility.minAge) {
+                    reasons.push(
+                        "You meet the minimum age requirement of " +
+                        scheme.eligibility.minAge + " years."
+                    );
+                }
+
+                if (scheme.eligibility.gender) {
+                    reasons.push(
+                        "Your gender matches this scheme."
+                    );
+                }
 
                 card.innerHTML = `
                     <h3>${scheme.name}</h3>
                     <p>${scheme.benefit}</p>
+
+                    <div class="why-qualify">
+                        <strong>Why you qualify</strong>
+                        <ul>
+                            ${reasons.map(function(reason) {
+                                return `<li>${reason}</li>`;
+                            }).join("")}
+                        </ul>
+                    </div>
 
                     <p>
                         <strong>Documents:</strong>
